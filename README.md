@@ -47,3 +47,34 @@ node restore.js main.js.map ./restored-src --verbose
 ```
 
 <img width="922" height="285" alt="image" src="./images/image.png" />
+
+## Docker 
+
+```bash
+docker build -t restore-sourcemap .
+```
+
+```bash
+docker run --rm \
+  -v /path/on/host:/data \
+  restore-sourcemap \
+  /data/main.js.map /data/restored-src --verbose
+```
+
+### Explanation:
+
+- -v /path/on/host:/data mounts the host directory to /data in the container
+
+- The CLI arguments use /data paths so the container sees the files inside /data
+
+- Restored files appear on your host machine under /path/on/host/restored-src
+
+#### Notes
+
+- Havent tested the docker way yet
+
+- You can add --flat or --dry-run flags after output folder as usual.
+
+- The container runs with no root privileges needed (default user is root inside container but it’s isolated).
+
+- Make sure you have read/write permissions on the mounted host directories.
