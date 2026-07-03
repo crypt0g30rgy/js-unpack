@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env nodejs
 // restore.js
 const fs = require('fs');
 const path = require('path');
