@@ -81,7 +81,7 @@ node restore.js main.js.map ./restored-src --verbose
 The Go version lives at `cmd/restore-sourcemap` in this repo.
 
 ```bash
-go install github.com/crypt0g30rgy/js-unpack/cmd/restore-sourcemap@latest
+go install github.com/crypt0g30rgy/js-unpack/cmd@latest
 ```
 
 This puts a `restore-sourcemap` binary in `$(go env GOPATH)/bin` (often `~/go/bin` — make sure that's on your `PATH`).
